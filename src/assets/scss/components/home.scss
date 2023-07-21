@@ -1,0 +1,44 @@
+.home {
+  max-width: 100%;
+  height: 100vh;
+  background-image: url("../../images/night-king.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 20%;
+  background-size: cover;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom left, #010616, #090816);
+    opacity: 0.6;
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color: $light-blue;
+
+    &--yellow {
+      animation: animate 9s linear infinite;
+    }
+  }
+
+  &__subtitle {
+    color: $light-blue;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    text-align: center;
+  }
+}
