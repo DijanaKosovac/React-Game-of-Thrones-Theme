@@ -5,6 +5,12 @@ const getCharacters = () => {
   return response;
 };
 
+const getCharacterById = (id) => {
+  const response = apiUrl.get(`/Characters/${id}`);
+  return response;
+};
+
 export const gameOfThronesService = {
   getCharacters,
+  getCharacterById,
 };
