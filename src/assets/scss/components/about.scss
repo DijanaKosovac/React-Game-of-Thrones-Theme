@@ -6,16 +6,6 @@
   background-size: cover;
   background-position: center center;
 
-  // &:before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   background-color: $dark-blue;
-  // }
-
   &__title {
     text-transform: uppercase;
     font-weight: 700;
@@ -24,7 +14,6 @@
   }
 
   &__wrapper {
-    // position: absolute;
     width: 100%;
     display: flex;
     flex-direction: column;
