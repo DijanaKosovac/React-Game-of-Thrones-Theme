@@ -5,6 +5,7 @@ import Home from "../components/Home";
 import Characters from "../pages/Characters";
 import Plot from "../pages/Plot";
 import CharacterDetails from "../pages/Characters-details";
+import PageNotFound from "../pages/PageNotFound";
 
 const Routing = () => {
   return (
@@ -17,6 +18,7 @@ const Routing = () => {
           <Route path="/characters/:id" element={<CharacterDetails />} />
           <Route path="/plot" element={<Plot />} />
         </Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
