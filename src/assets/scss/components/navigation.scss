@@ -12,6 +12,7 @@
     gap: 2rem;
     list-style-type: none;
     padding-right: 2rem;
+    overflow: hidden;
   }
 
   &__item {
@@ -48,4 +49,22 @@
   right: 0;
   z-index: 998;
   display: none;
+}
+
+.MuiBottomNavigation-root {
+  background-color: $bottom-navigation-bkg !important;
+}
+
+.MuiBottomNavigation-root a {
+  color: $white;
+}
+
+@media screen and (max-width: 992px) {
+  .bottom-navigation {
+    display: block;
+  }
+
+  .navigation {
+    display: none;
+  }
 }
