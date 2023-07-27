@@ -1,7 +1,9 @@
-.loader-container {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  z-index: 999;
+.skeleton-card {
+  background-color: $black-bkg;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(toRem(300), 1fr));
+  column-gap: toRem(24);
+  row-gap: toRem(32);
+  padding: toRem(130) 0 toRem(48) 0;
 }

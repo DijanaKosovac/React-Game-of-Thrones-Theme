@@ -44,7 +44,7 @@
 
 @media only screen and (max-width: 820px) {
   .plot {
-    padding-bottom: 4.5rem;
+    padding-bottom: toRem(48);
   }
   .plot__title {
     margin-top: 2rem;

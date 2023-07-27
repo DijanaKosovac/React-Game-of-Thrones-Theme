@@ -1,7 +1,7 @@
 import { gameOfThronesService } from "../services/gameOfThrones.service";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CircleLoader from "react-spinners/CircleLoader";
+import SkeletonCard from "../components/SkeletonCard";
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
@@ -25,18 +25,7 @@ const Characters = () => {
   return (
     <React.Fragment>
       {isLoading ? (
-        <div className="loader-container">
-          <CircleLoader
-            color="#03bcf4"
-            size={100}
-            cssOverride={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-            }}
-          />
-        </div>
+        <SkeletonCard />
       ) : (
         <section className="characters">
           {characters.map((character) => (

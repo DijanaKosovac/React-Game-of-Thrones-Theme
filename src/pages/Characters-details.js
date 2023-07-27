@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { gameOfThronesService } from "../services/gameOfThrones.service";
 import React, { useEffect, useState } from "react";
-import CircleLoader from "react-spinners/CircleLoader";
 
 const CharacterDetails = () => {
   const [isLoading, setLoading] = useState(true);
@@ -25,18 +24,7 @@ const CharacterDetails = () => {
   return (
     <React.Fragment>
       {isLoading ? (
-        <div className="loader-container">
-          <CircleLoader
-            color="#03bcf4"
-            size={100}
-            cssOverride={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-            }}
-          />
-        </div>
+        <div className="loader-container"></div>
       ) : (
         <section className="character">
           <section className="character__details">
