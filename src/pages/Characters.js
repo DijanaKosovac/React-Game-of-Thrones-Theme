@@ -1,18 +1,19 @@
 import { gameOfThronesService } from "../services/gameOfThrones.service";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SkeletonCard from "../components/SkeletonCard";
+import { useDispatch, useSelector } from "react-redux";
+import { setCharacters } from "../store/character-slice";
 
 const Characters = () => {
-  const [characters, setCharacters] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const characters = useSelector((state) => state.characters);
   let navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const fetchCharacters = async () => {
     try {
       const res = await gameOfThronesService.getCharacters();
-      setCharacters(res.data);
-      setIsLoading(false);
+      dispatch(setCharacters(res.data));
     } catch (error) {
       console.error("Unexpected error!", error);
     }
@@ -24,7 +25,7 @@ const Characters = () => {
 
   return (
     <React.Fragment>
-      {isLoading ? (
+      {!characters.length ? (
         <SkeletonCard />
       ) : (
         <section className="characters">
